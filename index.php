@@ -1,4 +1,5 @@
 <?php
+
 //include_once ('controlador/controlador_pruebas.php');
 ?>
 <!DOCTYPE html>
@@ -33,23 +34,23 @@
         </button>
       </div>
       <div class="modal-body">
-      <form>
+      <form action="grabar_articulo.php" metod="POST">
             <div class="form-group">
                 <label for="exampleFormControlInput1">Codigo</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ej. MA001" required minlength="4" maxlength="6" >
+                <input type="text" class="form-control" name="codigo" placeholder="Ej. MA001" required minlength="4" maxlength="6" >
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Nombre</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ej. MARTILLO" required minlength="6" maxlength="20">
+                <input type="text" class="form-control" name="nombre" placeholder="Ej. MARTILLO" required minlength="6" maxlength="20">
             </div>
             
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Decripci&oacute;n</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"placeholder="Decripci&oacute;n" required minlength="10" maxlength="50"></textarea>
+                <textarea class="form-control" name="descripcion" rows="2"placeholder="Decripci&oacute;n" required minlength="10" maxlength="50"></textarea>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Cantidad</label>
-                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Ej. 1" required min= "1">
+                <input type="number" class="form-control" name="cantidad" placeholder="Ej. 1" required min= "1">
             </div>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -63,39 +64,11 @@
 </div>
 
 
-<!-- tabla  -->
-    
-<div class="container">
- <table class="table">
-  <thead >
-    <tr class= "bg-success">
-      <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Descripci&oacute;n</th>
-      <th scope="col">Cantidad</th>
-      <th scope="col">Accion</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>
-          <button type="button" class="btn btn-danger">Eliminar</button>
-          <button type="button" class="btn btn-warning">Editar</button>
-        </td>
-     
-    </tr>
-  </tbody>
-</table>
-
+<div id="contenidoTabla"></div>
 
 </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script type='text/javascript' src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

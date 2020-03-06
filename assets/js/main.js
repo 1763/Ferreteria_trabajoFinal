@@ -1,6 +1,24 @@
 $( document ).ready(function() {
-    console.log( "login" );
+    var login = true;
+
+    if( login ){
+        fn_tbArticulos_ini();
+    }else{
+        alert("login");
+    }
 });
+
+function fn_tbArticulos_ini () {
+
+    $.ajax({
+        type: "GET",
+        url: "tabla_articulos.php",
+        success: function(html) { 
+            $("#contenidoTabla").empty();
+            $("#contenidoTabla").html(html);
+        }
+    });
+}
 
 
 ///evento escuchando click
