@@ -1,3 +1,4 @@
+<script src="#!">var HTTP_status = localStorage.getItem("session"); if( HTTP_status != '200'){location.href ='login.php'; }</script>
 <?php
 class Clase_CludPruebas extends MySql{
   
@@ -46,6 +47,31 @@ class Clase_CludPruebas extends MySql{
  		$this->CloseConnection();  
 		return $respuesta;
 	}
+
+	public function fn_buscarTodo( $buscador ){
+		$query="SELECT  Id               as id_key,	
+		                codigo           as codigo,
+						nombre           as nombre,
+					    descripcion      as descripcion,
+                        cantidad         as cantidad
+					FROM  articulos
+					WHERE 	codigo like '".$buscador."%'
+							or nombre like '".$buscador."%'
+							or descripcion like '".$buscador."%'";
+					
+		$result = $this->ExecuteQuery($query);
+		while($row= $this->GetRows($result)){
+			$respuesta[]	= array(
+                "id_key"		     => $row[0],
+                "codigo"             => $row[1],
+				"nombre"             => $row[2],
+				"descripcion"        => $row[3],
+				"cantidad"           => $row[4]
+			);
+		}    
+ 		$this->CloseConnection();  
+		 return (empty($respuesta)) ? [] : $respuesta;
+		}
 	
 	public function fn_eliminarAticulo( $key_id ){
 		$query="DELETE FROM articulos  

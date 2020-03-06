@@ -1,3 +1,4 @@
+<script src="#!">var HTTP_status = localStorage.getItem("session"); if( HTTP_status != '200'){location.href ='login.php'; }</script>
 <?php
 class MySql{
  

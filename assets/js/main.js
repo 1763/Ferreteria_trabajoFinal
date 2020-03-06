@@ -1,10 +1,11 @@
 $( document ).ready(function() {
-    var login = true;
+    var HTTP_status = localStorage.getItem("session"); 
 
-    if( login ){
+    if( HTTP_status == '200'){
         fn_tbArticulos_ini();
     }else{
-        alert("login");
+        localStorage.setItem("session", '404');
+        location.href ='login.php';
     }
 });
 
@@ -33,7 +34,20 @@ $("#btnSalir").click( function(){
         confirmButtonText: 'Si, estoy seguro'
       }).then((result) => {
         if (result.value) {
-         console.log("salir");
+            localStorage.setItem("session", '404');
+            location.href ='index.php';
         }
       })
+});
+
+
+$("#btnBuscar").click( function(){
+    $.ajax({
+        type: "GET",
+        url: "tabla_articulos.php?buscar="+$("#txtbuscar").val(),
+        success: function(html) { 
+            $("#contenidoTabla").empty();
+            $("#contenidoTabla").html(html);
+        }
+    });
 });

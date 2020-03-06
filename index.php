@@ -1,27 +1,34 @@
 <?php
-
-//include_once ('controlador/controlador_pruebas.php');
+session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>ferreteria</title>
+    <title><?php echo $_SESSION["tiposuario"];?> ferreteria</title>
 </head>
 <body>
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link" href="#!" href="#">Articulos</a>
-        </li>
-        <li class="nav-item">
-           <a class="nav-link" href="#!" data-toggle="modal" data-target="#exampleModalCenter">Agregar</a>
-        </li>
-        <li class="nav-item">
-            <a id="btnSalir" class="nav-link" href="#!">Salir</a>
-        </li>
-    </ul>
+ 
+  
+ 
+    <nav class="navbar navbar-light bg-light">
+        <a class="nav-brand" href="#!" href="#">Articulos</a>
+        <a class="nav-brand" href="#!" data-toggle="modal" data-target="#exampleModalCenter">Agregar</a>
+        <a id="btnSalir" class="nav-brand" href="#!">Salir</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" id="txtbuscar" placeholder="Buscar por.." aria-label="Buscar por">
+            <a class="btn btn-outline-success my-2 my-sm-0" href="#!" id="btnBuscar">Buscar</button>
+            <a class="btn btn-outline-warning my-2 my-sm-0" href="index.php">x</button>
+        </form>
+        </nav>
+
+
+
+    
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -66,7 +73,6 @@
 
 <div id="contenidoTabla"></div>
 
-</div>
 </body>
 <script type='text/javascript' src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
