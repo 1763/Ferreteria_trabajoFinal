@@ -6,10 +6,10 @@
 	$obj = new Clase_CludPruebas();   
     $obj->CreateConnection(); 
 
-    $parametros['codigo']       = strtoupper($_GET['codigo']);
-    $parametros['nombre']       = strtoupper($_GET['nombre']);
-    $parametros['descripcion']  = strtoupper($_GET['descripcion']);
-    $parametros['cantidad']     = $_GET['cantidad'];
+    $parametros['codigo']       = strtoupper($_POST['codigo']);
+    $parametros['nombre']       = strtoupper($_POST['nombre']);
+    $parametros['descripcion']  = strtoupper($_POST['descripcion']);
+    $parametros['cantidad']     = $_POST['cantidad'];
 
 
     $respuesta = $obj->fn_grabarAticulo( $parametros );

@@ -13,15 +13,15 @@ session_start();
 <body>
  
   
- 
+<div class="container">
     <nav class="navbar navbar-light bg-light">
         <a class="nav-brand" href="#!" href="#">Articulos</a>
         <a class="nav-brand" href="#!" data-toggle="modal" data-target="#exampleModalCenter">Agregar</a>
         <a id="btnSalir" class="nav-brand" href="#!">Salir</a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" id="txtbuscar" placeholder="Buscar por.." aria-label="Buscar por">
-            <a class="btn btn-outline-success my-2 my-sm-0" href="#!" id="btnBuscar">Buscar</button>
-            <a class="btn btn-outline-warning my-2 my-sm-0" href="index.php">x</button>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="#!" id="btnBuscar">Buscar</a>
+            <a class="btn btn-outline-warning my-2 my-sm-0" href="index.php">x</a>
         </form>
         </nav>
 
@@ -41,7 +41,7 @@ session_start();
         </button>
       </div>
       <div class="modal-body">
-      <form action="grabar_articulo.php" metod="POST">
+      <form action="grabar_articulo.php" method="POST">
             <div class="form-group">
                 <label for="exampleFormControlInput1">Codigo</label>
                 <input type="text" class="form-control" name="codigo" placeholder="Ej. MA001" required minlength="4" maxlength="6" >
@@ -63,16 +63,16 @@ session_start();
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
       </div>
-      <div class="modal-footer">
+      
         
-      </div>
+      
     </div>
   </div>
 </div>
 
 
 <div id="contenidoTabla"></div>
-
+</div>
 </body>
 <script type='text/javascript' src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
