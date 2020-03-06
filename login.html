@@ -1,0 +1,47 @@
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+	<title>Login / Register Ferreteria</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+	<link rel="stylesheet" href="/quintod/Carreraj/proyectofinal/estilos.css">
+</head>	
+	
+ <body>
+       <div class="container-form">
+         <div class="header">
+            <div class="logo-title">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS5_8EHx-iYGn71DrQc1Q250TYxc1g5xMe2Zo9cNqWmZIWbCE0Y" alt="">
+                <h2>Ferremundo</h2>
+            </div>
+            <div class="menu">
+                <a href="https://gruposiba.org/quintod/Carreraj/proyectofinal/login.html"><li class="module-login active">Login</li></a>
+                <a href="https://gruposiba.org/quintod/Carreraj/proyectofinal/register.php"><li class="module-register">Register</li></a>
+            </div>
+        </div>
+        
+        <form action="controlLogin.php" method="post" class="form">
+            <div class="welcome-form"><h1>Bienvenido a</h1><h2>Ferremundo</h2></div>
+            <div class="user line-input">
+                <label class="lnr lnr-user"></label>
+                <input type="text" placeholder="Nombre Usuario" name="nombre">
+            </div>
+            <div class="password line-input">
+                <label class="lnr lnr-lock"></label>
+                <input type="password" id="clave" placeholder="&#128272; Contraseña" name="clave">
+            </div>
+            <?php if(!empty($error)): ?>
+            <div class="mensaje">
+                <?php echo $error; ?>
+            </div>
+            <?php endif; ?>
+            
+            <button type="submit" >Entrar<label class="btn-enviar"></label></button>
+        </form>
+    </div>
+         
+		
+    </div>
+ 
+ </body>
+</html>
